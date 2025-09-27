@@ -1,0 +1,40 @@
+name = "xget-web"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+#顶层配置
+
+# 是否启用workers.dev域名
+workers_dev = false
+[vars]
+#修改为你的xget服务地址
+BASE_URL = "https://xget.xcherry.cn"
+
+
+[env.dev.vars]
+#修改为你的xget服务地址
+BASE_URL = "https://xget.xcherry.cn"
+
+[env.dev]
+name = "xget-web-dev"
+# dev环境域名配置,修改为你自己的域名
+route = { pattern = "xuc.xcherry.cn", custom_domain = true }
+
+
+#production环境配置
+[env.production.vars]
+#修改为你的xget服务地址
+BASE_URL = "https://xget.xcherry.cn"
+[env.production]
+name = "xget-web"
+# 生产环境子域名配置,修改为你自己的域名
+route = { pattern = "xuc.xcherry.cn", custom_domain = true }
+
+#staging环境配置
+[env.staging.vars]
+#修改为你的xget服务地址
+BASE_URL = "https://xget.xcherry.cn"
+[env.staging]
+name = "xget-web-staging"
+# staging环境子域名配置，修改为你自己的域名
+route = { pattern = "staging.xuc.xcherry.cn", custom_domain = true }
